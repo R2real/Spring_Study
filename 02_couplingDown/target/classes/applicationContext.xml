@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="test.IPhone" id="iphone" init-method="initMethod" destroy-method="destroyMethod"/>
+	<!-- 객체... 필수 속성인 class !! id 도 거의 필수--> 
+	<bean class="test.GalaxyPhone" id="gphone" lazy-init="true" scope="prototype"/>
+	
+</beans>
+
