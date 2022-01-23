@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="test.IPhone" id="iphone">
+		<!--생성자를 통해 의존성 주입 방법 -->
+		<!-- <constructor-arg ref="appleWatch"/>
+		 <constructor-arg value="ari"/> -->
+		 
+		 <!--setter를 통해 의존성 주입 방법  -->
+		 <property name="watch" ref="appleWatch"></property>
+		 <property name="uname" value = "ari"></property>
+	</bean>
+	
+	<bean class="test.AppleWatch" id="appleWatch" lazy-init="true"/>
+	<bean class="test.SmartWatch" id="smartWatch" lazy-init="true"/>
+	<bean class="test.GalaxyPhone" id="gphone" lazy-init="true" scope="prototype"/>
+	
+</beans>
+
